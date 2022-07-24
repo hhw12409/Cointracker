@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
 import {
   Container,
   Header,
@@ -9,8 +10,9 @@ import {
   Loader,
   Img,
 } from "./styles";
+import { fetchCoins } from "../../api";
 
-interface CoinInterface {
+interface ICoin {
   id: string;
   name: string;
   symbol: string;
@@ -21,6 +23,8 @@ interface CoinInterface {
 }
 
 const Coins = () => {
+  const { isLoading, data } = useQuery<ICoin[]>(["allCoins"], fetchCoins);
+  /**
   const [coins, setCoins] = useState<CoinInterface[]>([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -31,16 +35,17 @@ const Coins = () => {
       setLoading(false);
     })();
   }, []);
+   */
   return (
     <Container>
       <Header>
         <Title>코인</Title>
       </Header>
-      {loading ? (
+      {isLoading ? (
         <Loader>Loading...</Loader>
       ) : (
         <CoinList>
-          {coins.map((coin) => (
+          {data?.slice(0, 100).map((coin) => (
             <Coin key={coin.id}>
               <Link to={`/${coin.id}`} state={{ name: coin.name }}>
                 <Img
