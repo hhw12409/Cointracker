@@ -7,3 +7,10 @@
 - TypeScript
 - styled-components
 - styled-reset
+
+## 추가할 기능
+
+- back기능
+- darkTheme, lightTheme
+- Price tab구현하기
+- Candlestick chart로 변경해보기

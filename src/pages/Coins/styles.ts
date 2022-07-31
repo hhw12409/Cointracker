@@ -11,6 +11,16 @@ const Header = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
+  button {
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    color: black;
+    padding: 8px 10px;
+    margin-left: 20px;
+    font-weight: 800;
+    cursor: pointer;
+  }
 `;
 
 const CoinList = styled.ul``;

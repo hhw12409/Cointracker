@@ -11,6 +11,9 @@ import {
   Img,
 } from "./styles";
 import { fetchCoins } from "../../api";
+import { Helmet } from "react-helmet";
+import { useSetRecoilState } from "recoil";
+import { isDarkAtom } from "../../atoms";
 
 interface ICoin {
   id: string;
@@ -36,10 +39,16 @@ const Coins = () => {
     })();
   }, []);
    */
+  const setDarkAtom = useSetRecoilState(isDarkAtom);
+  const toggleDarkAtom = () => setDarkAtom((prev) => !prev);
   return (
     <Container>
+      <Helmet>
+        <title>코인</title>
+      </Helmet>
       <Header>
         <Title>코인</Title>
+        <button onClick={toggleDarkAtom}>Toggle Mode</button>
       </Header>
       {isLoading ? (
         <Loader>Loading...</Loader>

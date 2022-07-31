@@ -1,11 +1,13 @@
 import { DefaultTheme } from "styled-components";
 
-export const theme: DefaultTheme = {
-  textColor: "#2f3640",
-  bgColor: "#f5f6fa",
+export const lightTheme: DefaultTheme = {
+  textColor: "black",
+  bgColor: "whitesmoke",
   accentColor: "#9c88ff",
 };
 
-export type ThemeType = {
-  theme: typeof theme;
+export const darkTheme: DefaultTheme = {
+  textColor: "white",
+  bgColor: "#7F7F7F",
+  accentColor: "#9c88ff",
 };

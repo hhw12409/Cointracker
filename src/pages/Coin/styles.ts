@@ -41,6 +41,7 @@ const Tab = styled.span<{ isActive: boolean }>`
     props.isActive ? props.theme.accentColor : props.theme.bgColor};
   a {
     display: block;
+    color: white;
   }
 `;
 

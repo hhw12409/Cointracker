@@ -1,13 +1,18 @@
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
-import { theme, ThemeType } from "./theme";
 
-const GlobalStyle = createGlobalStyle<{ theme: ThemeType }>`
+interface ITheme {
+  textColor: string;
+  bgColor: string;
+  accentCoor: string;
+}
+
+const GlobalStyle = createGlobalStyle<{ theme: ITheme }>`
   ${reset}
   body {
     font-family:'Source Sans Pro', sans-serif;
-    background-color : #2f3640;
-    color: #f5f6fa;
+    background-color : ${(props) => props.theme.bgColor}
+    color: ${(props) => props.theme.textColor};
   }
   * {
     box-sizing: border-box;
