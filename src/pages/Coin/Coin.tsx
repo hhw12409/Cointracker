@@ -8,7 +8,7 @@ import {
 import { Container, Header, Title, Loader } from "../Coins/styles";
 import { Overview, OverviewItem, Description, Tabs, Tab } from "../Coin/styles";
 import { useQuery } from "@tanstack/react-query";
-import { fetchCoinInfo, fetchCoinTickers } from "../../api";
+import { fetchCoinInfo, fetchCoinTickers } from "../../apis/api";
 import { Helmet } from "react-helmet";
 
 interface RouteState {
